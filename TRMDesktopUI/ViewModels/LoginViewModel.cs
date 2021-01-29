@@ -14,7 +14,7 @@ namespace TRMDesktopUI.ViewModels
         private string _password;
         private string _errorMessage;
 
-        private IAPIHelper _apiHelper;
+        private readonly IAPIHelper _apiHelper;
 
         public string UserName
         {
