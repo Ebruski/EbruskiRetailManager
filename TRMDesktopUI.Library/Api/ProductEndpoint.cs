@@ -10,7 +10,7 @@ namespace TRMDesktopUI.Library.Api
 {
     public class ProductEndpoint : IProductEndpoint
     {
-        private IApiHelper _apiHelper;
+        private readonly IApiHelper _apiHelper;
 
         public ProductEndpoint(IApiHelper apiHelper)
         {
@@ -28,7 +28,9 @@ namespace TRMDesktopUI.Library.Api
                 }
                 else
                 {
+#pragma warning disable S112 // General exceptions should never be thrown
                     throw new Exception(response.ReasonPhrase);
+#pragma warning restore S112 // General exceptions should never be thrown
                 }
             }
         }
